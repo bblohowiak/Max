@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 493.0, 87.0, 986.0, 879.0 ],
+		"rect" : [ 281.0, 180.0, 771.0, 726.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,16 +40,129 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-82",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1075.0, -3.0, 70.0, 22.0 ],
+					"text" : "loadmess 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-83",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 1075.0, 133.0, 29.5, 22.0 ],
+					"text" : "+ 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-84",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 1097.0, 88.0, 40.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 647.0, 61.0, 55.0, 22.0 ],
+					"text" : "tri~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-85",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 1097.0, 42.0, 40.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 647.0, 15.0, 40.0, 22.0 ],
+					"text" : "rect~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-86",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 1095.5, 28.0, 43.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 645.5, 1.0, 43.0, 22.0 ],
+					"text" : "cycle~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-87",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 1097.0, 74.0, 52.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 647.0, 47.0, 52.0, 22.0 ],
+					"text" : "phasor~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-88",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 1097.0, 58.0, 37.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 647.0, 31.0, 37.0, 22.0 ],
+					"text" : "saw~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.647058823529412, 0.623529411764706, 0.623529411764706, 1.0 ],
+					"disabled" : [ 0, 0, 0, 0, 0 ],
+					"id" : "obj-89",
+					"itemtype" : 0,
+					"maxclass" : "radiogroup",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1075.0, 28.0, 84.0, 82.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 631.0, 1.0, 84.0, 82.0 ],
+					"size" : 5,
+					"value" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-79",
 					"linecount" : 20,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 194.0, 9.0, 793.0, 288.0 ],
+					"patching_rect" : [ 159.0, 286.0, 794.0, 288.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 31,
-					"presentation_rect" : [ 256.5, 222.0, 401.0, 435.0 ],
-					"text" : "Each of the above modules contains three pairs of sine wave oscillators that begin at the module's indicated target frequency. The primary pair of oscillators of a given module symmetrically detune as per the indicated beating range factor (range 0-3 in this automation). \n\nThe secondary pair of oscillators take the frequency of one of the primary oscillators as their target frequency and also symmetrically deviate from it as per the indicated beating range factor. The third pair of oscillators recapitulate this relationship with reference to the frequency of one of the secondary oscillators. In effect, the beating range factor determines the harmonic range of an oscillator pair-set of an above module. \n\nA sine function dynamically scales the rate of oscillator frequency change. \n\nBecause beating range is indicated as a proportion of target frequency, rates of frequency beats among oscillator pairs are not necessarily synchronized. \n\nIn this automation, the beating range factor increases with time as does its rate of increase. This increases the harmonic range of the output. \n\nAt intervals, beating range increase implies increase of the target frequency of the second module via multiplication of the top module's target frequency with an incremented value (range 4-18 in this automation). This also increases the harmonic range of the output.\n\nAt intervals of decreasing duration, the change of oscillator frequencies pauses for a duration and then resumes. Such a pause provides a sort of snapshot of transition, to paraphrase Bergson, with such snapshots themselves dynamic in their periodicity. The length of the pause duration decreases as time elapses. \n"
+					"presentation_linecount" : 27,
+					"presentation_rect" : [ 189.5, 277.0, 537.0, 382.0 ],
+					"text" : "Each of the above modules contains three pairs of oscillators that begin at the module's indicated target frequency. The primary pair of oscillators of a given module symmetrically detune as per the indicated beating range factor (range 0-3 in this automation). \n\nThe secondary pair of oscillators take the frequency of one of the primary oscillators as their target frequency and also symmetrically deviate from it as per the first pair's beating rate. The third pair of oscillators recapitulate this relationship with reference to the frequency and beating rate of one of the secondary oscillators. In effect, the beating range factor determines the harmonic range of an oscillator pair-set of an above module.\n\nA sine function dynamically scales the rate of oscillator frequency change. \n\nBecause beating range is indicated as a proportion of target frequency and target frequencies may vary among oscillator pairs, rates of frequency beats among oscillator pairs are not necessarily synchronized. \n\nIn this automation, the beating range factor increases with time as does its rate of increase. This increases the harmonic range of the output. \n\nAt intervals, beating range increase implies increase of the target frequency of the second module via multiplication of the top module's target frequency with an incremented value (range 4-18 in this automation). This also increases the harmonic range of the output.\n\nAt intervals of decreasing duration, the change of oscillator frequencies pauses for a duration and then resumes. Such a pause provides a sort of snapshot of transition, to paraphrase Bergson, with such snapshots themselves dynamic in their periodicity. The length of the pause duration decreases as time elapses. \n"
 				}
 
 			}
@@ -996,14 +1109,14 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "2021-12-28TripleDFB.maxpat",
-					"numinlets" : 5,
+					"name" : "2022-01-01TripleDFB.maxpat",
+					"numinlets" : 11,
 					"numoutlets" : 6,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal" ],
-					"patching_rect" : [ 415.0, 146.0, 522.0, 51.0 ],
+					"patching_rect" : [ 779.0, 324.0, 522.0, 51.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 193.0, 146.0, 522.0, 51.0 ],
+					"presentation_rect" : [ 193.0, 173.0, 522.0, 78.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -1092,14 +1205,14 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "2021-12-28TripleDFB.maxpat",
-					"numinlets" : 5,
+					"name" : "2022-01-01TripleDFB.maxpat",
+					"numinlets" : 11,
 					"numoutlets" : 6,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal" ],
-					"patching_rect" : [ 415.0, 86.0, 522.0, 51.0 ],
+					"patching_rect" : [ 532.0, 113.0, 522.0, 51.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 193.0, 86.0, 522.0, 51.0 ],
+					"presentation_rect" : [ 193.0, 86.0, 522.0, 73.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -1946,6 +2059,116 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-89", 0 ],
+					"source" : [ "obj-82", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 10 ],
+					"order" : 1,
+					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 9 ],
+					"order" : 3,
+					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 8 ],
+					"order" : 5,
+					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 7 ],
+					"order" : 7,
+					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 6 ],
+					"order" : 9,
+					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 5 ],
+					"order" : 11,
+					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 10 ],
+					"order" : 0,
+					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 9 ],
+					"order" : 2,
+					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 8 ],
+					"order" : 4,
+					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 7 ],
+					"order" : 6,
+					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 6 ],
+					"order" : 8,
+					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 5 ],
+					"order" : 10,
+					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-83", 0 ],
+					"source" : [ "obj-89", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 2 ],
 					"order" : 3,
 					"source" : [ "obj-9", 0 ]
@@ -2041,14 +2264,14 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "2021-12-28TripleDFB.maxpat",
+				"name" : "2022-01-01TripleDFB.maxpat",
 				"bootpath" : "~/Dropbox",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "2021-12-28DynamicFreqBeater.maxpat",
+				"name" : "2022-01-01DynamicFreqBeater.maxpat",
 				"bootpath" : "~/Dropbox",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
@@ -2061,8 +2284,34 @@
 				"type" : "JSON",
 				"implicit" : 1
 			}
+, 			{
+				"name" : "2022-01-01WaveSelector.maxpat",
+				"bootpath" : "~/Dropbox",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
  ],
-		"autosave" : 0
+		"autosave" : 0,
+		"styles" : [ 			{
+				"name" : "AudioStatus_Menu",
+				"default" : 				{
+					"bgfillcolor" : 					{
+						"type" : "color",
+						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
+						"color1" : [ 0.454902, 0.462745, 0.482353, 0 ],
+						"color2" : [ 0.290196, 0.309804, 0.301961, 1 ],
+						"angle" : 270,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+ ]
 	}
 
 }
